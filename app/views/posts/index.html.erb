@@ -42,24 +42,27 @@
   <% else %>
     <p><%= post.message %></p>
   <% end %>
-    <div>
-      <%= link_to like_post_path(post), class:"like-btn", method: :put, remote: :true do %>
-    Preach </div>
 
-    <div>
-      <%= link_to unlike_post_path(post), class:"liked", method: :put, remote: :true do %>
-    Preached </div>
-    
-    <% end%>
 
-  <% end%>
-    <span class="likes-count"><%= post.get_upvotes.size %> </span>
+  <div class="like_count">
+    <%= post.get_likes.size %>
+  </div>
+
     <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
       Read
     <a>
-    <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
-      Preach
-    <a>
+    <a>  <% if current_user.liked? post %>
+
+        <div> <%= link_to unlike_post_path(post), class:"liked", method: :put, remote: :true do %>
+        Preached </div>
+
+        <% end%>
+      <% else %>
+      <div> <%= link_to like_post_path(post), class:"like-btn", method: :put, remote: :true do %>
+      Preach </div>
+
+        <% end%>
+        <% end%> <a>
     <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
       Praise
     <a>

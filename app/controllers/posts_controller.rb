@@ -57,6 +57,8 @@ class PostsController < ApplicationController
 
   def unlike
     @post = Post.find(params[:id])
+    p @post
+    p 'POST ABOVE'
     @post.unliked_by current_user
   end
 

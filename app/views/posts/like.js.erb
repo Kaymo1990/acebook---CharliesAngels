@@ -1,6 +1,13 @@
-<% if current_user.liked? @post %>
-  $('.like-btn').addClass('liked');
-<% else %>
-  $('.like-btn').addClass('like-btn');
-<% end %>
-  $('.likes-count').html("<%=@post.get_upvotes.size %>")
+
+
+$('.like-btn').on('ajax:success', function(){
+  console.log('LIKED FIRED');
+  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %>');
+
+});
+
+$('.liked').bind('ajax:success', function(){
+  console.log('unLIKED FIRED')
+  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %>');
+
+});
