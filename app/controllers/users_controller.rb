@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(user_id: @user.id)
+    @posts = Post.all
   end
 
   def new
@@ -18,10 +18,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    10.times do
-      puts ""
-    end
-    p @user.avatar
     if @user.save
       log_in(@user)
       session[:current_user_id] = @user.id
