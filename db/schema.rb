@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_114522) do
+ActiveRecord::Schema.define(version: 2019_09_26_114523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_114522) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.string "wall_id"
     t.index ["cached_likes_down"], name: "index_posts_on_cached_likes_down"
     t.index ["cached_likes_score"], name: "index_posts_on_cached_likes_score"
     t.index ["cached_likes_total"], name: "index_posts_on_cached_likes_total"
@@ -55,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_09_26_114522) do
     t.index ["cached_weighted_average"], name: "index_posts_on_cached_weighted_average"
     t.index ["cached_weighted_score"], name: "index_posts_on_cached_weighted_score"
     t.index ["cached_weighted_total"], name: "index_posts_on_cached_weighted_total"
-    t.string "wall_id"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
