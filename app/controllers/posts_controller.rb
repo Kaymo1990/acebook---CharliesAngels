@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 
-  respond_to :html, :json
+
+  # before_action :authenticate_user!, only: [:like]
+
+  respond_to :js, :html, :json
   protect_from_forgery
 
   def new
@@ -43,6 +46,16 @@ class PostsController < ApplicationController
 
   def show
     redirect_to posts_path
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
   end
 
   private

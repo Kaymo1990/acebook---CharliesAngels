@@ -66,4 +66,5 @@ gem 'coffee-rails'
 
 gem 'responders'
 
-gem 'RedCloth'
+gem 'acts_as_votable'
+
