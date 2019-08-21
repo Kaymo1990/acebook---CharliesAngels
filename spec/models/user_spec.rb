@@ -13,9 +13,7 @@ RSpec.describe User, type: :model do
     it "creates a user and saves them in database" do
       params = {"firstname"=>"Kay", "lastname"=>"Mo", "email"=>"k@mos.com", "password"=>"password"}
       user = User.create(params)
-      p "USER #{user}"
       id = user.id
-      p "ID #{id}"
       test_user = User.find_by(id: id)
       expect(user).to eq test_user
     end
@@ -26,8 +24,6 @@ RSpec.describe User, type: :model do
       params = {"firstname"=>"Kay", "lastname"=>"Mo", "email"=>"k@mos.com", "password"=>"password"}
       user = User.create(params)
       id = user.id
-      p "ID #{id}"
-      p "passong test"
       user.destroy
       test = User.find_by(id: id)
       expect(test).to eq nil
