@@ -9,6 +9,7 @@
 <p> <%= current_Hour %> <%= current_user.firstname %></p>
 
 <center><div class="indexTitle"><h1> Angels </h1></div>
+  <%= File.basename(request.original_url) %>
   <br>
   <div class='error'>
     <% if flash[:login_already]%>
@@ -30,19 +31,14 @@
   <br>
 
 <% @posts.each do |post| %>
+<% if post.wall_id == File.basename(request.original_url) %>
   <br>
   <div class="well">
-    <strong><%= post.user.firstname %></strong>
+    <%= link_to (post.user.firstname), user_path(post.user.id), method: :get%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
     <br>
-
-    <!-- <img src="wings.gif" class="halo"> -->
-  <% if current_user == post.user && post.less_than_10_minutes_ago  %>
-    <p><%= best_in_place post, :message  %></p>
-  <% else %>
-    <p><%= post.message %></p>
-  <% end %>
-
+    
+    <p><%= simple_format(post.message) %></p>
 
   <div class="like_count">
     <%= post.get_likes.size %>
@@ -87,11 +83,15 @@
           </div>
         </div>
   </div>
-  <% if current_user == (post.user) %>
+  <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
+    <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm" %>
+  <% end %>
+  <% if current_user == (post.user)%>
     <%= link_to 'Delete', post_path(post), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %>
     <br>
   <% else %>
     <br>
   <%end%>
+<%end%>
 <%end%>
 <br>

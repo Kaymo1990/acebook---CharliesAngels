@@ -67,3 +67,4 @@ gem 'coffee-rails'
 gem 'responders'
 
 gem 'acts_as_votable'
+

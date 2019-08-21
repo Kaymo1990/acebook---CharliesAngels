@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
       post = create_post
       new_params = {"message"=>"this is an updated message"}
       post_id = post.id
-      Post.update(post_id, new_params)
+      post.update(new_params)
       new_post = Post.find_by(id: post_id)
       expect(new_post.message).to eq "this is an updated message"
     end
@@ -44,5 +44,16 @@ RSpec.describe Post, type: :model do
       post.destroy
       expect(Post.find_by(id: post_id)).to eq nil
     end
+  end
+
+  describe ".createURL" do
+    it "should have a url in the post"
+    user_params = {"firstname"=>"Kay", "lastname"=>"Mo", "email"=>"k@mo.com", "password"=>"password"}
+    current_user = User.create(user_params)
+    post_params = {"message"=>"this is a test message", "wall_id" => "1"}
+    post = current_user.posts.build(post_params)
+    post.save
+    return post
+    expect(post.wall_id).to eq "1"
   end
 end

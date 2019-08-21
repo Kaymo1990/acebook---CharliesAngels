@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_09_26_114522) do
     t.index ["cached_weighted_average"], name: "index_posts_on_cached_weighted_average"
     t.index ["cached_weighted_score"], name: "index_posts_on_cached_weighted_score"
     t.index ["cached_weighted_total"], name: "index_posts_on_cached_weighted_total"
+    t.string "wall_id"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

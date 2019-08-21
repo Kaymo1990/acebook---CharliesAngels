@@ -3,12 +3,8 @@ class UsersController < ApplicationController
   protect_from_forgery
 
   def show
-    if logged_in?
-      @user = User.find(params[:id])
-      @posts = Post.where(user_id: @user.id)
-    else
-      redirect_to sessions_new_url
-    end
+    @user = User.find(params[:id])
+    @posts = Post.all
   end
 
   def new
@@ -24,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       log_in(@user)
-      session[:current_user_id] = @user.id
+      # session[:current_user_id] = @user.id
       redirect_to posts_path
     else
       render 'new'
