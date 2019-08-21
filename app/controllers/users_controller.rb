@@ -3,14 +3,18 @@ class UsersController < ApplicationController
   protect_from_forgery
 
   def show
-    @user = User.find(params[:id])
-    @posts = Post.where(user_id: @user.id)
+    if logged_in?
+      @user = User.find(params[:id])
+      @posts = Post.where(user_id: @user.id)
+    else
+      redirect_to sessions_new_url
+    end
   end
 
   def new
     if logged_in?
       flash[:register_already] = ['you already have an account']
-      redirect_to posts_path
+      redirect_to post_path
     else
       @user = User.new
     end

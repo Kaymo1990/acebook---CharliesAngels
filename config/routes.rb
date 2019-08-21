@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users
-  resources :posts
+
+  resources :posts do
+    member do
+      put "like" => "posts#like"
+      put "unlike" => "posts#unlike"
+    end
+  end
 end
