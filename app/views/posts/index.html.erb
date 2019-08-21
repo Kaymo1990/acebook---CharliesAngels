@@ -32,7 +32,7 @@
 <% @posts.each do |post| %>
   <br>
   <div class="well">
-    <strong><%= post.user.firstname %></strong>
+    <%= link_to (post.user.firstname), user_path(post.user.id), method: :get%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
     <br>
 
