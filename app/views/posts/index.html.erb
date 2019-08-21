@@ -34,7 +34,7 @@
 <% if post.wall_id == File.basename(request.original_url) %>
   <br>
   <div class="well">
-    <strong><%= post.user.firstname %></strong>
+    <%= link_to (post.user.firstname), user_path(post.user.id), method: :get%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
     <br>
     <p><%= simple_format(post.message) %></p>

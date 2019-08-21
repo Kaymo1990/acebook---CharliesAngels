@@ -11,7 +11,7 @@
         <li><% provide(:title, @user.firstname) %></li>
         <li>
           <% if @user.avatar.attached? %>
-            <%= image_tag(@user.avatar, :class => "avatar") %>
+            <img src="<%= url_for(@user.avatar)%>" class="avatar">
           <% else %>
             <%= image_tag('halo.jpg', :class => "avatar") %>
           <% end  %>

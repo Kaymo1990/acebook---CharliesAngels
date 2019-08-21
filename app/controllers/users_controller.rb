@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       log_in(@user)
-      session[:current_user_id] = @user.id
+      # session[:current_user_id] = @user.id
       redirect_to posts_path
     else
       render 'new'
