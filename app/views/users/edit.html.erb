@@ -1,25 +1,25 @@
-<% provide(:title, 'Sign up') %>
-<h1>Update your profile: </h1>
+<% provide(:title, 'Update Details') %>
 
-<div class="row">
+<div class="login text-center">
 
-  <%= form_for(@user) do |f| %>
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
+  <%= form_for(@user,  html: {class: 'form-signin'}) do |f| %>
+    <h1 class="h3 mb-3 font-weight-normal">Update Account Details</h1>
 
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
+    <%= f.label :firstname, for:'inputFirstName', class: "sr-only" %>
+    <%= f.text_field :firstname, id: "inputFirstName", class: 'form-control', placeholder: "First name", required: true, autofocus: true %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.label :lastname, for:'inputLastName', class: "sr-only"  %>
+    <%= f.text_field :lastname, id: "inputLastName", class: 'form-control', placeholder: "Last name", required: true, autofocus: true  %>
 
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.label :email, for:'inputEmail', class: "sr-only"  %>
+    <%= f.email_field :email, id: "inputEmail", class: 'form-control', placeholder: "Email address", required: true, autofocus: true%>
+    <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: "Password", required: true%>
 
-    <%= f.label "Profile photo" %>
+
+    <%= f.label "Profile photo", class: "sr-only" %>
     <%= f.file_field :avatar %><br>
-
-    <%= f.submit "Save changes" %>
+    <br>
+    <%= f.submit "Submit", class: 'btn btn-primary btn-block'%>
     <% end %>
 
 </div>
