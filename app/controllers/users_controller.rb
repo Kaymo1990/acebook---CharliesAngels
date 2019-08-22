@@ -7,6 +7,19 @@ class UsersController < ApplicationController
     @posts = Post.all
   end
 
+  def index
+    @users = User.all
+  end
+
+  def search
+    search_query = params[:search].downcase
+    if search_query.blank?
+      @searched_users = User.all
+    else
+      @searched_users = User.all.where("lower(firstname) LIKE :search OR lower(lastname) LIKE :search", search: "%#{search_query}%")
+    end
+  end
+
   def new
     if logged_in?
       flash[:register_already] = ['you already have an account']
