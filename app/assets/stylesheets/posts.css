@@ -43,3 +43,7 @@
 .username_link {
   font-size: 140%;
 }
+
+.post-btns {
+  display: inline;
+}

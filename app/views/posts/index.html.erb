@@ -35,11 +35,11 @@
   <div class="well">
     <%= link_to (post.user.firstname), user_path(post.user.id), method: :get, class: "username_link"%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
-    
+
     <p><%= simple_format(post.abbreviated) %></p>
 
   <div class="like_count">
-    <%= post.get_likes.size %>
+    <%= post.get_likes.size %> &#128591
   </div>
 
     <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
@@ -56,10 +56,8 @@
       Preach </div>
 
         <% end%>
-        <% end%> <a>
-    <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
-      Praise
-    <a>
+        <% end%>
+       <a>
         <!-- Modal -->
         <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -81,6 +79,7 @@
           </div>
         </div>
   </div>
+
   <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
     <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm" %>
   <% end %>
