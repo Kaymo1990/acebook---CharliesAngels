@@ -35,8 +35,8 @@
   <div class="well">
     <%= link_to (post.user.firstname), user_path(post.user.id), method: :get, class: "username_link"%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
-
-    <p><%= simple_format(post.message) %></p>
+    
+    <p><%= simple_format(post.abbreviated) %></p>
 
   <div class="like_count">
     <%= post.get_likes.size %>
