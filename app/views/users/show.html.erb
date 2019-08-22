@@ -31,6 +31,9 @@
            <%= link_to (post.user.firstname), user_path(post.user.id), method: :get, class: "username_link"%>
            <div class="time_since_post"><%= time_since_post(post) %></div>
            <p><%= simple_format(post.message) %></p>
+           <div class="time_since_post"><%= "Created: #{time_since_post(post)}" %></div>
+
+
 
            <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">Read<a>
             <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

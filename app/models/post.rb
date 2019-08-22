@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
 
+  attr_reader :short_form
   acts_as_votable
 
   belongs_to :user
@@ -19,4 +20,12 @@ class Post < ApplicationRecord
     end
   end
 
+  def abbreviated
+    short_form = self.message[0..140]
+    if self.message.length > 140
+      short_form += "..."
+    else
+      short_form
+    end
+  end
 end
