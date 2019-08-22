@@ -7,11 +7,11 @@
   <body>
 
     <div class="container">
-      <ul class="list-inline">
+      <ul class="list-inline" style="margin:15px 0px">
         <li><% provide(:title, @user.firstname) %></li>
         <li>
           <% if @user.avatar.attached? %>
-            <img src="<%= url_for(@user.avatar)%>" class="avatar">
+            <img src="<%= url_for(@user.avatar)%>" class="avatar" style="margin:15px 0px">
           <% else %>
             <%= image_tag('default_avatar.jpg', :class => "avatar") %>
           <% end  %>
@@ -20,8 +20,7 @@
         <li><strong>Lastname: </strong><%= @user.lastname %></li>
         <li><strong>Email: </strong><%= @user.email %></li>
         <li><strong>Member since: </strong><%= @user.created_at.strftime("%d %B %Y") %></li>
-        <li><strong>Last Updated: </strong><%= @user.updated_at.strftime("%d %B %Y")%></li>
-        <br>
+        <li style="margin-bottom: 10px"><strong>Last Updated: </strong><%= @user.updated_at.strftime("%d %B %Y")%></li>
         <li><%= link_to "New post", new_post_path, type: "button", class: "btn btn-primary" %></li>
       </ul>
 
