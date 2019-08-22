@@ -4,7 +4,7 @@ feature 'Post on a wall' do
     registration
     visit('/users/1')
     click_link "New post"
-    fill_in "Message", with: "Post for wall only"
+    fill_in "post[message]", with: "Post for wall only"
     click_button "Submit"
     visit('/users/1')
     expect(page).to have_content('Post for wall only')

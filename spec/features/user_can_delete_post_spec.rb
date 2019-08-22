@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     registration
     click_link "New post"
-    fill_in "Message", with: "Hi"
+    fill_in "post[message]", with: "Hi"
     click_button "Submit"
     click_on "Delete"
     expect(page).not_to have_content("Hi")

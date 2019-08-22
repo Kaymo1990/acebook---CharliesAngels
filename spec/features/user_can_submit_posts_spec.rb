@@ -18,7 +18,7 @@ RSpec.feature "Timeline", type: :feature do
     registration
     visit "users/1"
     click_link "New post"
-    fill_in "Message", with: "Hi"
+    fill_in "post[message]", with: "Hi"
     click_button "Submit"
     expect(page).to have_current_path(user_path(1))
     expect(page).to have_content("Hi")
