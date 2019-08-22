@@ -9,7 +9,6 @@
 <p> <%= current_Hour %> <%= current_user.firstname %></p>
 
 <center><div class="indexTitle"><h1> Angels </h1></div>
-  <%= File.basename(request.original_url) %>
   <br>
   <div class='error'>
     <% if flash[:login_already]%>
@@ -34,10 +33,9 @@
 <% if post.wall_id == File.basename(request.original_url) %>
   <br>
   <div class="well">
-    <%= link_to (post.user.firstname), user_path(post.user.id), method: :get%>
+    <%= link_to (post.user.firstname), user_path(post.user.id), method: :get, class: "username_link"%>
     <div class="time_since_post"><%= time_since_post(post) %></div>
-    <br>
-    
+
     <p><%= simple_format(post.message) %></p>
 
   <div class="like_count">
