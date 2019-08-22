@@ -1,5 +1,5 @@
-<%= form_for @post do |form| %>
-
+<%= form_for @post, html: {class: 'form-signin'} do |form| %>
+  <h2>New Post</h2>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -17,10 +17,10 @@
 
 
   <%= form.label :message %>
-  <%= form.text_area :message %>
+  <%= form.text_area :message, class: 'form-control' %>
   <%= form.hidden_field :wall_id, :value => File.basename(request.referer) %>
 
-  <%= form.submit "Submit" %>
-
+  <%= form.submit "Submit", class: 'btn btn-primary btn-block' %>
+  <br>
   <%= link_to 'Back', posts_path %>
 <% end %>
