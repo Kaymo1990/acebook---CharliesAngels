@@ -3,11 +3,12 @@
 $('.like-btn').on('ajax:success', function(){
   console.log('LIKED FIRED');
   $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> &#128591');
-
+  $(this).closest('.liked').html('Preached');
 });
 
 $('.liked').bind('ajax:success', function(){
   console.log('unLIKED FIRED')
   $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> &#128591');
+  $(this).closest('.liked').html('Preach');
 
 });
