@@ -6,6 +6,8 @@
   </head>
   <body>
 
+    <center>
+
     <div class="container">
       <ul class="list-inline" style="margin:15px 0px">
         <li><% provide(:title, @user.firstname) %></li>
@@ -31,8 +33,27 @@
            <div class="time_since_post"><%= time_since_post(post) %></div>
            <p><%= simple_format(post.abbreviated) %></p>
 
+           <div class="like_count">
+             <%= post.get_likes.size %> &#128591
+           </div>
 
-           <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">Read<a>
+           <a>  <% if current_user.liked? post %>
+
+               <div> <%= link_to unlike_post_path(post), class:"liked", method: :put, remote: :true do %>
+               Preached </div>
+
+               <% end%>
+             <% else %>
+             <div> <%= link_to like_post_path(post), class:"like-btn", method: :put, remote: :true do %>
+             Preach </div>
+
+               <% end%> 
+               <% end%>
+              <a>
+
+            <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">Read<a>
+
+           <!-- <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">Read<a> -->
             <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
              <div class="modal-dialog modal-dialog-centered" role="document">
                <div class="modal-content">

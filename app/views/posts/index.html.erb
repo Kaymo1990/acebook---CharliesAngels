@@ -42,9 +42,7 @@
     <%= post.get_likes.size %> &#128591
   </div>
 
-    <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
-      Read
-    <a>
+
     <a>  <% if current_user.liked? post %>
 
         <div> <%= link_to unlike_post_path(post), class:"liked", method: :put, remote: :true do %>
@@ -58,6 +56,11 @@
         <% end%>
         <% end%>
        <a>
+
+         <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+           Read
+         <a>
+
         <!-- Modal -->
         <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
