@@ -9,14 +9,15 @@
   <body>
     <% @searched_users.each do |user| %>
     <div id="search-results">
-      <li><a id=<%=user.id%> href="<%=user_path(user.id)%>"><%= user.firstname.capitalize %> <%= user.lastname.capitalize %>
-        <div id="user-search-avatar">
-          <% if user.avatar.attached? %>
-            <img src="<%= url_for(user.avatar)%>" class="avatar" >
-          <% else %>
-            <%= image_tag('default_avatar.jpg', :class => "avatar") %>
-          <% end  %>
-        </div>
+      <li>
+       <div id="user-search-avatar">
+      <% if user.avatar.attached? %>
+        <img src="<%= url_for(user.avatar)%>" class="avatar" >
+      <% else %>
+        <%= image_tag('default_avatar.jpg', :class => "avatar") %>
+      <% end  %>
+      </div>
+        <a id=<%=user.id%> href="<%=user_path(user.id)%>"><%= user.firstname.capitalize %> <%= user.lastname.capitalize %>
       </a></li>
       </div>
 
