@@ -29,7 +29,6 @@
         <ul class="navbar-nav mr-auto">
             <% if current_user %>
               <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"  %>
-              <%= link_to "Wall", user_path(current_user), method: :get, class: "dropdown-item" %>
               <%= link_to "News feed", post_path(current_user), method: :get, class: "dropdown-item" %>
               <%= link_to "Update details", edit_user_path(current_user), method: :get, class: "dropdown-item" %>
             <% else %>
@@ -46,6 +45,5 @@
       </div>
     </nav>
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
