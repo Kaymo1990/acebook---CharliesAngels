@@ -38,7 +38,7 @@ rspec
 * Submit a pull request on github.
 
 ## Instructions on how to deploy the app
-* Visit https://intense-badlands-30370.herokuapp.com/
+* Visit https://secure-harbor-32632.herokuapp.com 
 
 ## Approach to the project
 * Our app was built with Ruby on Rails using TDD (Test Driven Development)

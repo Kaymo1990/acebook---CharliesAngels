@@ -26,7 +26,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    respond_with @post
+    if @post.wall_id == 'posts'
+      respond_with(@post, :location => posts_path)
+    else
+      respond_with(@post, :location => user_path(@post.wall_id))
+    end
   end
 
   def index
@@ -44,8 +48,11 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
-    redirect_to posts_path
+    if @post.wall_id == 'posts'
+      redirect_to posts_path
+    else
+      redirect_to user_path(@post.wall_id)
+    end
   end
 
   def show

@@ -1,6 +1,6 @@
 
 <%= form_with(model: @post, local: true, html: {class: 'form-signin'}) do |form| %>
-<h2>Edit your post</h2>
+<h3>Edit your post</h3>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -17,14 +17,12 @@
   <% end %>
 
   <p>
-  <%= form.label :message %><br>
-  <%= form.text_area :message, class: 'form-control' %>
+  <%= form.text_area :message, id: 'message', class: 'form-control' %>
 </p>
 
 <p>
   <%= form.submit "Update Post", class: 'btn btn-primary btn-block' %>
 </p>
-<br>
-<%= link_to 'Back', post_path %>
+<%= link_to 'Back', request.referer, class: "btn btn-primary btn-sm" %>
 
 <% end %>
