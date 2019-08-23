@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/search' => 'users#search', :as => 'search_page' 
+  get '/search' => 'users#search', :as => 'search_page'
+
+  get '/members' => 'users#members', :as => 'members_page'
 
   resources :users
 

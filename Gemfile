@@ -7,6 +7,8 @@ end
 
 ruby "2.5.0"
 
+gem 'faker'
+
 gem 'jquery-rails'
 
 # gem 'activestorage', '~> 0.1'
@@ -67,4 +69,3 @@ gem 'coffee-rails'
 gem 'responders'
 
 gem 'acts_as_votable'
-

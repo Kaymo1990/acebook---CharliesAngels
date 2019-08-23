@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Angels page</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" class="form-control" id="filter" placeholder="Search Angels page...">
+    </div>
+    <div class="container">
+      <ul id="membersList">
+        <% @users.each do |user| %>
+        <li><a href=<%= user_path(user.id) %>> <%= user.firstname %> <%= user.lastname %></a></li>
+        <%end%>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      var filter = document.getElementById('filter');
+
+      filter.addEventListener('keyup', filterItems);
+
+      function filterItems(e) {
+        var text = e.target.value.toLowerCase();
+        var itemList = Array.from(document.getElementById("membersList").children);
+        itemList.forEach(function(item){
+          if(item.textContent.toLowerCase().indexOf(text) != -1) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

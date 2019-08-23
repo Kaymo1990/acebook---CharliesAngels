@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def members
+    @users = User.all
+  end
+
   def search
     search_query = params[:search].downcase
     if search_query.blank?
