@@ -68,3 +68,4 @@ gem 'responders'
 
 gem 'acts_as_votable'
 
+gem 'faker'
