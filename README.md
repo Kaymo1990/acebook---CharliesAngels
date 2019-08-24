@@ -5,6 +5,7 @@ This is the Charlie's Angels' attempt at the [Makers Academy](https://makers.tec
 
 ## Useful links
 [Our Trello board - for project management](https://trello.com/b/Tw2CEvdT/acebook-charlies-angels)
+
 [Our Google Doc - for monitoring our learning](https://docs.google.com/document/d/15x8yE9Rd4o0w7JL5pWOROjeqIs4rt6D-Ndd3v0kMRf8/edit?usp=sharing)
 
 ## How to install and run the project
