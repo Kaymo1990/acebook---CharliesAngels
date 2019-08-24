@@ -38,13 +38,12 @@ rspec
 * Clone the repo (see above)
 * Submit a pull request on github.
 
-## Instructions on how to deploy the app
-* Visit https://secure-harbor-32632.herokuapp.com 
-
 ## Approach to the project
 * Our app was built with Ruby on Rails using TDD (Test Driven Development)
+* We worked in an agile way, using daily stand-ups, retros and 2-day sprint planning. 
+* We mainly used pair programming, swapping pairs regularly so that each team member understood every aspect of the code. Occassionally we used mob-pogramming or solo-work when required. 
 
-## User Stories
+## Initial User Stories
 
 ```
 As a user
