@@ -1,21 +1,19 @@
-
-
-$('.like-btn').on('click', function(){
-  console.log('LIKED FIRED');
-  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> &#128591');
-  var parent = $(this).parent().parent().find('.like_count')
-  console.log(parent + ' parent printed');
-  $(this).closest('.liked').html('Preached');
-  var closest = $(this).parent().parent().find('.liked')
-  console.log(closest + ' closest fired');
-});
-
-$('.liked').bind('click', function(){
+$('.liked').on('ajax:success', function(){
   console.log('unLIKED FIRED')
-  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> &#128591');
+  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> <%= @post.id %> &#128591');
   console.log($(this))
   var test = $(this).parent().parent().find('.like_count')
   console.log(test);
   $(this).closest('.liked').html('Preach');
+
+});
+
+$('.like-btn').on('ajax:success', function(){
+  console.log('LIKED FIRED');
+  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> <%= @post.id %> &#128591');
+  console.log($(this));
+  var test = $(this).parent().parent().find('.like_count')
+  console.log(test);
+  $(this).closest('.like-btn').html('Preached');
 
 });

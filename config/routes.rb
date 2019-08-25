@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/search' => 'users#search', :as => 'search_page' 
+  get '/search' => 'users#search', :as => 'search_page'
 
   resources :users
 
   resources :posts do
     member do
       put "like" => "posts#like"
-      put "unlike" => "posts#unlike"
+      # put "unlike" => "posts#unlike"
     end
   end
 end
