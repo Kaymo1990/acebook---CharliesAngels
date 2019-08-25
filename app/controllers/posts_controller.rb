@@ -62,11 +62,17 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
     @post.liked_by current_user
+    p 'LIKE FIRED'
+    p @post.get_likes.size
+    p 'LIKES ABOVE'
   end
 
   def unlike
     @post = Post.find(params[:id])
     @post.unliked_by current_user
+    p 'UNLIKE FIRED'
+    p @post.get_likes.size
+    p 'LIKES ABOVE'
   end
 
   private
