@@ -35,13 +35,16 @@ rspec
 ```
 
 ## Some of the Features
-1. Sign up
+1. Sign up  
+
 ![short screen recording of the sign up page being filled out](./app/assets/images/acebook_1_signup.gif)
 
-2. Post
+2. Post  
+
 ![short screen recording of post being made and liked](./app/assets/images/acebook_gif_2_post.gif)
 
-3. Searching for other users
+3. Searching for other users  
+  
 ![short screen recording of searching for other users and going to their wall](./app/assets/images/acebook_gif_3_searching.gif)
 
 ## Instructions on how to contribute to the project
