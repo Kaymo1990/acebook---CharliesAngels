@@ -34,14 +34,24 @@ rails server
 rspec
 ```
 
+## Some of the Features
+1. Sign up
+![short screen recording of the sign up page being filled out](images/acebook_1_signup.gif)
+
+2. Post
+![short screen recording of post being made and liked](images/acebook_gif_2_post.gif)
+
+3. Searching for other users
+![short screen recording of searching for other users and going to their wall](images/acebook_gif_3_searching.gif)
+
 ## Instructions on how to contribute to the project
 * Clone the repo (see above)
 * Submit a pull request on github.
 
 ## Approach to the project
 * Our app was built with Ruby on Rails using TDD (Test Driven Development)
-* We worked in an agile way, using daily stand-ups, retros and 2-day sprint planning. 
-* We mainly used pair programming, swapping pairs regularly so that each team member understood every aspect of the code. Occassionally we used mob-pogramming or solo-work when required. 
+* We worked in an agile way, using daily stand-ups, retros and 2-day sprint planning.
+* We mainly used pair programming, swapping pairs regularly so that each team member understood every aspect of the code. Occassionally we used mob-pogramming or solo-work when required.
 
 ## Initial User Stories
 
