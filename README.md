@@ -1,4 +1,5 @@
 # Charlie's Angels 'Acebook'
+[![Build Status](https://travis-ci.org/Kaymo1990/acebook---CharliesAngels.svg?branch=master)](https://travis-ci.org/Kaymo1990/acebook---CharliesAngels)
 
 ## Project Description
 This is the Charlie's Angels' attempt at the [Makers Academy](https://makers.tech/) weeks 8-9 [engineering project challenge](https://github.com/makersacademy/course/blob/master/engineering_projects/README.md)
@@ -44,7 +45,7 @@ rspec
 ![short screen recording of post being made and liked](./app/assets/images/acebook_gif_2_post.gif)
 
 3. Searching for other users  
-  
+
 ![short screen recording of searching for other users and going to their wall](./app/assets/images/acebook_gif_3_searching.gif)
 
 ## Instructions on how to contribute to the project
