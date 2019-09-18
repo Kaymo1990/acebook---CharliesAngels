@@ -1,19 +1,15 @@
-$('.liked').on('ajax:success', function(){
-  console.log('unLIKED FIRED')
-  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> <%= @post.id %> &#128591');
-  console.log($(this))
-  var test = $(this).parent().parent().find('.like_count')
-  console.log(test);
-  $(this).closest('.liked').html('Preach');
-
+$('.preached-btn').on('ajax:success', function(){
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_likes.size %> &#128591');
+  $(this).closest('.preached-btn').html('Preach');
 });
 
-$('.like-btn').on('ajax:success', function(){
-  console.log('LIKED FIRED');
-  $(this).parent().parent().find('.like_count').html('<%= @post.get_likes.size %> <%= @post.id %> &#128591');
-  console.log($(this));
-  var test = $(this).parent().parent().find('.like_count')
-  console.log(test);
-  $(this).closest('.like-btn').html('Preached');
-
+$('.preach-btn').on('ajax:success', function(){
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_likes.size %> &#128591');
+  $(this).closest('.preach-btn').html('Preached');
 });
+
+
+
+s
