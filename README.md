@@ -21,6 +21,10 @@ bundle install
 ```
 * Run:
 ```
+rails db:setup
+```
+* Run:
+```
 rails db:migrate
 ```
 * Run:
