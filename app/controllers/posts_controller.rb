@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
 
-
-  # before_action :authenticate_user!, only: [:like]
-
   respond_to :js, :html, :json
+
   protect_from_forgery
 
   def new
@@ -61,12 +59,11 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    @post.liked_by current_user
-  end
-
-  def unlike
-    @post = Post.find(params[:id])
-    @post.unliked_by current_user
+    if params[:format] == 'like'
+      @post.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @post.unliked_by current_user
+    end
   end
 
   private

@@ -41,21 +41,14 @@ ActiveRecord::Schema.define(version: 2019_09_26_114523) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cached_likes_total", default: 0
-    t.integer "cached_likes_score", default: 0
-    t.integer "cached_likes_up", default: 0
-    t.integer "cached_likes_down", default: 0
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
     t.string "wall_id"
-    t.index ["cached_likes_down"], name: "index_posts_on_cached_likes_down"
-    t.index ["cached_likes_score"], name: "index_posts_on_cached_likes_score"
-    t.index ["cached_likes_total"], name: "index_posts_on_cached_likes_total"
-    t.index ["cached_likes_up"], name: "index_posts_on_cached_likes_up"
-    t.index ["cached_weighted_average"], name: "index_posts_on_cached_weighted_average"
-    t.index ["cached_weighted_score"], name: "index_posts_on_cached_weighted_score"
-    t.index ["cached_weighted_total"], name: "index_posts_on_cached_weighted_total"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

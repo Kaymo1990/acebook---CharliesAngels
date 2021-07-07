@@ -61,26 +61,29 @@
      </div>
     <% end %>
 
-  <div class="like_count">
+<span class='parent-likes'>
+  <span class="like_count" <%=post.id%>'>
     <%= post.get_likes.size %> &#128591
+  </span>
+
+  <a>
+    <% if current_user.liked? post %>
+      <div> <%= link_to like_post_path(post, 'unlike'), class: "preached-btn",
+      method: :put, remote: :true do %> Preached </div>
+    <% end%>
+    <% else %>
+      <div> <%= link_to like_post_path(post, 'like'), class: "preach-btn",
+      method: :put, remote: :true do %> Preach </div>
+    <% end%>
+    <% end%>
+  <a>
+</span>
+
+
+
   </div>
 
 
-    <a>  <% if current_user.liked? post %>
-
-        <div id="preached-btn"> <%= link_to unlike_post_path(post), class: "liked", method: :put, remote: :true do %>
-        Preached </div>
-
-        <% end%>
-        <% else %>
-        <div id="preach-btn"> <%= link_to like_post_path(post), class: "like-btn", method: :put, remote: :true do %>
-        Preach </div>
-
-        <% end%>
-        <% end%>
-       <a>
-
-  </div>
 
   <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
     <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm" %>

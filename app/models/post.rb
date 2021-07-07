@@ -1,7 +1,8 @@
 class Post < ApplicationRecord
 
-  attr_reader :short_form
   acts_as_votable
+
+  attr_reader :short_form
 
   belongs_to :user
   default_scope -> { order(created_at: :desc) }

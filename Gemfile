@@ -58,6 +58,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'acts_as_votable'
+
 gem 'travis'
 
 gem 'best_in_place'
@@ -65,7 +67,5 @@ gem 'best_in_place'
 gem 'coffee-rails'
 
 gem 'responders'
-
-gem 'acts_as_votable'
 
 gem 'faker'
